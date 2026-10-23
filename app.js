@@ -1,3 +1,5 @@
+const SUPABASE_URL = "https://goszhtwxgdnfbzxrchll.supabase.co";
+const SUPABASE_KEY = "sb_publishable_WIjWqmN-p0o2MlsGpPFF8A_Ibk_VcvOsb_publishable_WIjWqmN-p0o2MlsGpPFF8A_Ibk_VcvO";
 const sampleListings = [
  {id:1,type:'product',title:'Modern sneakers — size 42',price:380,location:'Accra',seller:'Kojo Mensah',initials:'KM',emoji:'👟',description:'Clean everyday sneakers. Comfortable fit and ready for pickup.',category:'Fashion'},
  {id:2,type:'product',title:'Cordless power drill set',price:650,location:'Tema',seller:'BuildSmart Tools',initials:'BT',emoji:'🛠️',description:'Cordless drill with charger and starter bits. Ideal for home projects.',category:'Tools'},
