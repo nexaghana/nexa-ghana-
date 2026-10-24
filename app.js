@@ -37,10 +37,18 @@ function openModal(type='product'){$('listingForm').classList.remove('hidden');$
 function closeModal(){$('modalBackdrop').classList.add('hidden');document.body.style.overflow='';}
 function toast(message){$('toast').textContent=message;$('toast').classList.remove('hidden');setTimeout(()=>$('toast').classList.add('hidden'),2800);}
 document.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>setCategory(b.dataset.category)));
+
 document.querySelectorAll('[data-jump]').forEach(button => {
   button.addEventListener('click', function () {
     const target = document.getElementById(this.dataset.jump);
     if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      alert('Section not found: ' + this.dataset.jump);
+    }
+  });
+});
+
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
