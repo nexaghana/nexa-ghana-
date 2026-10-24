@@ -37,7 +37,10 @@ function openModal(type='product'){$('listingForm').classList.remove('hidden');$
 function closeModal(){$('modalBackdrop').classList.add('hidden');document.body.style.overflow='';}
 function toast(message){$('toast').textContent=message;$('toast').classList.remove('hidden');setTimeout(()=>$('toast').classList.add('hidden'),2800);}
 document.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>setCategory(b.dataset.category)));
-document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.jump).scrollIntoView({behavior:'smooth'})));
+document.querySelectorAll('[data-jump]').forEach(b=>b.addEventListener('click',()=>{
+  const target = $(b.dataset.jump);
+  if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+}));
 $('searchBtn').addEventListener('click',()=>{renderListings();$('marketplace').scrollIntoView({behavior:'smooth'});});$('searchInput').addEventListener('input',renderListings);$('locationFilter').addEventListener('change',renderListings);
 ['postTopBtn','heroPostBtn','postSectionBtn','bannerPostBtn','mobilePostBtn','emptyPostBtn'].forEach(id=>$(id).addEventListener('click',()=>openModal()));
 $('modalClose').addEventListener('click',closeModal);$('modalBackdrop').addEventListener('click',e=>{if(e.target===$('modalBackdrop'))closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
